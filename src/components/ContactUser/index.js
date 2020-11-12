@@ -3,11 +3,12 @@ import { ContactUserContainer } from './style'
 
 export default function ContactUser({
   user = {},
+  selected = false,
   onClickStar = () => { },
   onClickUser = () => { },
 }) {
   return (
-    <ContactUserContainer onClick={onClickUser}>
+    <ContactUserContainer onClick={onClickUser} className={selected ? "selected" : ""}>
       <img
         src={'https://static.thenounproject.com/png/17241-200.png'}
         width={40}

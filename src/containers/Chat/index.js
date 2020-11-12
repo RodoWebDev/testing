@@ -16,6 +16,7 @@ export default function Chat() {
   const [users, setUsers] = useState(mockUsers)
   const [search, setSearch] = useState('')
   const [filterOption, setFilterOption] = useState('0')
+  const [selectedID, setSelectedID] = useState(null);
 
   const onClickStar = (user) => {
     setUsers(users.map(_user => {
@@ -26,6 +27,12 @@ export default function Chat() {
     }))
   }
   const onClickUser = (user) => {
+    if (user.id === selectedID) {
+      setSelectedID(null);
+    }
+    else {
+      setSelectedID(user.id);
+    }
     history.push(`/?user=${user.id}`)
   }
 
@@ -43,7 +50,6 @@ export default function Chat() {
   }
 
   const onChangeOption = (e) => {
-    console.log("hey", e.target.value)
     const value = e.target.value
     setFilterOption(value)
     setSearch('')
@@ -94,6 +100,7 @@ export default function Chat() {
             <ContactUser
               key={_i}
               user={_user}
+              selected={selectedID === _user.id ? true : false}
               onClickUser={() => onClickUser(_user)}
               onClickStar={() => onClickStar(_user)}
             />

@@ -8,6 +8,10 @@ export const ContactUserContainer = styled.div`
   padding: 15px 30px;
   border-bottom: solid 1px #EDEDED;
   cursor: pointer;
+  &.selected {
+    background: #EFF4FF;
+    border-left: 5px solid gray;
+  }
   &:hover {
     background: #EFF4FF;
   }

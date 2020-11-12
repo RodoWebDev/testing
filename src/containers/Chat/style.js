@@ -52,6 +52,7 @@ export const ChatContainer = styled.div`
       align-items: center;
       .message-input {
         padding: 20px 30px;
+        width: 100%;
       }
     }
   }

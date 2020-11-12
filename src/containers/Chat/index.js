@@ -46,6 +46,7 @@ export default function Chat() {
     console.log("hey", e.target.value)
     const value = e.target.value
     setFilterOption(value)
+    setSearch('')
     if (value === '0') {
       setUsers(mockUsers)
       return
@@ -114,7 +115,7 @@ export default function Chat() {
         </Scrollbars>
         <div className='message-input-container'>
           <div className='message-input'>
-            <MyInput containerStyle={{ marginRight: 20 }} width='1000px' placeholder='Input your message...' />
+            <MyInput placeholder='Input your message...' />
           </div>
         </div>
       </div>

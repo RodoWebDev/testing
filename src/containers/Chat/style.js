@@ -56,4 +56,13 @@ export const ChatContainer = styled.div`
       }
     }
   }
+  .blank {
+    width: 400px;
+    text-align: center;
+    margin: auto;
+    color: darkslategray;
+    p {
+      font-size: 26px;
+    }
+  }
 `;

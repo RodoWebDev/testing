@@ -107,6 +107,7 @@ export default function Chat() {
           )}
         </Scrollbars>
       </div>
+      {selectedID ?
       <div className='messagebox-container'>
         <Scrollbars autoHide style={{ flex: 1 }}>
           <div className='messagebox'>
@@ -126,6 +127,12 @@ export default function Chat() {
           </div>
         </div>
       </div>
+      :
+      <div className="blank">
+        <h1>Select a conversation</h1>
+        <p>Start by selecting a conversation or searching for some specific</p>
+      </div>
+      }
     </ChatContainer>
   )
 }
